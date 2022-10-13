@@ -1,9 +1,0 @@
-CREATE TABLE User (
-      Email varchar(255),
-      Username varchar(255),
-      Rollnumber int,
-      Password varchar(255)
-);
-
-UPDATE User
-SET Email = Giri123@gmail.com, Username = Giri555, Rollnumber = 112, Password = PASSGIRI
