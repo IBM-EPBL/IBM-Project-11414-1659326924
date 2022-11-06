@@ -1,0 +1,42 @@
+CREATE TABLE User (
+      Email varchar(255),
+      Username varchar(255),
+      Rollnumber int,
+      Password varchar(255)
+);
+
+UPDATE User
+SET Email = Giri123@gmail.com, Username = Giri555, Rollnumber = 112, Password = PASSGIRI
+
+import sqlite3
+conn = sqlite3.connect("datab.sqlite")
+cursor = conn.cursor()
+quer = """CREATE TABLE User (
+      id integer PRIMARY KEY,
+      email text NOT NULL,
+      username text NOT NULL,
+      rollnumber integer,
+      password text NOT NULL
+)"""
+cursor.execute(quer)
+
+import sqlite3
+conn = sqlite3.connect("datab.sqlite")
+cursor = conn.cursor()
+quer = """INSERT INTO User VALUES (
+      1,
+      "admin123@gmail.com",
+      "admin627",
+      221,
+      "test2001"
+)"""
+cursor.execute(quer)
+conn.commit()
+conn.close()
+
+import sqlite3
+conn = sqlite3.connect("datab.sqlite")
+cursor = conn.cursor()
+curr1 = cursor.execute("""INSERT INTO User (email, username, rollnumber, password) VALUES (?, ?, ?, ?)""", ("new_email", "new_username", 555, "new_password"))
+conn.commit()
+conn.close()
