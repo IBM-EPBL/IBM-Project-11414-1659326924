@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <title>Homepage</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navleft">
+        <img class="icon" src="{{ url_for('static', filename='images/image1.png') }}" alt="Expense icon">
+        <div class="icontitle">Personal Expense Tracker</div>
+        </div>
+        <div class="navright">
+        <button class="signup" onclick="location.href='{{url_for('signup')}}'">SIGN UP</button>
+        <button class="login" onclick="location.href='{{url_for('loginn')}}'">LOG IN</button>
+        </div>
+    </nav>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <script>
+        window.watsonAssistantChatOptions = {
+          integrationID: "1ada9c84-2c0e-442d-ae68-95ed20193e99", // The ID of this integration.
+          region: "au-syd", // The region your integration is hosted in.
+          serviceInstanceID: "37a67bba-868c-4243-a70f-eef0eb77ff75", // The ID of your service instance.
+          onLoad: function(instance) { instance.render(); }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+          document.head.appendChild(t);
+        });
+      </script>
+    <script>
+      var messages = {{ messages | safe }};
+      for (var i=0; i<messages.length; i++) {
+        alert(messages[i]);
+      }
+    </script>
+    {% endif %}
+    {% endwith %}
+    <div class="experience">
+        <img class="expimg" src="{{ url_for('static', filename='images/image2.png') }}">
+        <div class="exptext">Experience a fresh way to manage your money</div>
+    </div>
+    <div class="cashflow">
+        <div class="cashtext">
+            <h1>Keep your cashflow crystal clear</h1>
+            <div class="cashsubtext">Money doesn't have to be messy. Effortlessly track your cashflow and gain
+                 insights that'll help you see easy opportunities to save.</div>
+        </div>
+        <img class="cashimg" src="{{ url_for('static', filename='images/image3.jpeg') }}" alt="App-mockup">
+    </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

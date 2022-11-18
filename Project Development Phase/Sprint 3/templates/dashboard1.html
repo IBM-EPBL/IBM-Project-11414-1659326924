@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <script>
+      var messages = {{ messages | safe }};
+      for (var i=0; i<messages.length; i++) {
+        alert(messages[i]);
+      }
+    </script>
+    {% endif %}
+    {% endwith %}
+    <h1>Hi {{result}}!!!</h1>
+    <button onclick="location.href='{{url_for('logout')}}'">logout</button>
+    <p>Total expense = {{totexp}}</p>
+    <form id="login" class="input-group" method="post">
+        <div class="sep">
+            <p>Expense</p>
+            <input type="number" class="input-field" name="expense" placeholder="expense" required>
+        </div>
+        <div class="sep">
+            <p>details</p>
+            <input type="text" class="input-field" name='details' placeholder="details" required>
+        </div>
+        <div class="passpad"></div>
+        <button type="submit" class="submit-btn" id="log" onclick="location.href='{{url_for('addexpense')}}'">Add Expense</button>
+    </form>
+</body>
+</html>
