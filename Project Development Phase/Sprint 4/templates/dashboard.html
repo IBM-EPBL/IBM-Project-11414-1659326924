@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <title>Homepage</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navleft">
+        <img class="icon" src="{{ url_for('static', filename='images/image1.png') }}" alt="Expense icon">
+        <div class="icontitle">Personal Expense Tracker</div>
+        </div>
+        <div class="navright">
+        <div class="logout"><button class="logout-btn" href="./login.html" style="border: none;" onclick="location.href='{{url_for('logout')}}'">LOG OUT</button>
+        </div>
+    </nav>
+    <div class="borderdecor"></div>
+    <div class="addexp">
+        <div class="expinp">
+        <form class="expform" method="post">
+            <div class="input-row">
+            <label for="Amount" style="padding-right: 13px;">Amount</label>
+            <input type="number" name="expense" placeholder="Amount" required>
+            </div>
+            <div class="input-row">
+            <label for="Category" style="padding-right: 5px;">Category</label>
+            <input name="details" placeholder="Category" required>
+            </div>
+            <button type="submit" class="exp" onclick="location.href='{{url_for('addexpense')}}'">Add Expense</button>
+        </form>
+        
+        </div>
+    </div>
+    <div class="exptable">
+        <table>
+            <thead>
+                <tr>
+                    <th>EXPENSE</th>
+                    <th>CATEGORY</th>
+                </tr>
+                <tbody>
+                    {%- for row in items %}
+                    <tr>
+                        {%- for column in columns %}
+                            {% if row[column]['link'] %}
+                            <td><a href="{{ row[column]['link'] }}">{{ row[column]['text'] }}</a></td>
+                            {% else %}
+                            <td>{{ row[column] }}</td>
+                            {% endif %}
+                        {%- endfor %}
+                    </tr>
+                    {%- endfor %}
+                </tbody>
+            </thead>
+        </table>
+    </div>
+
+    <script>
+        const form = document.querySelector('form');
+        function onaddExpense(e){
+        }
+        
+        form.addEventListener("submit",onaddExpense);
+    </script>
+</body>
+</html>
