@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+    font-family:'Rubik', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.navbar,
+.navleft,
+.navright
+{
+    display: flex;
+    flex-direction: row;
+}
+.navbar{
+    height: 1%;
+    margin-top: 25px;
+    width: 100%;
+    background-color: white;
+}
+.navleft{
+    margin-left: 100px;
+}
+.navright{
+    margin-right: 100px;
+    padding-left: 50%;
+}
+.icon{
+    height: 50px;
+    width: 50px;
+}
+.icontitle{
+    padding-left: 17px;
+    padding-top: 15px;
+    font-weight: bold;
+    font-size: 25px;
+}
+.signup{
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    padding-right: 25px;
+    padding-top: 15px;
+}
+.login{
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    padding-top: 15px;
+}
+.experience{
+    background-color: rgb(20,24,36);
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.expimg{
+    padding-right: 15px;
+}
+.exptext{
+    width: 400px;
+    padding-left: 150px;
+    color: white;
+    font-size: 40px;
+    font-weight:  bold;
+}
+.cashflow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    padding-top: 25px;
+}
+.cashtext{
+    width: 400px;
+    padding-top: 120px;
+}
+.cashsubtext{
+    padding-top: 15px;
+}
+.cashimg{
+    height: 450px;
+    width: 450px;
+}
+.workplan{
+    background-color: rgb(216,233,247);
+    padding-bottom: 40px;
+}
+.workheading{
+    text-align: center;
+    padding-top: 20px;
+}
+.workplan2{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.workplansub{
+    height: 400px;
+    width: 340px;
+    background-color: white;
+    border-radius: 10%;
+    text-align: center;
+}
+.workimg{
+    height: 250px;
+    width: 250px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.workcontainer{
+    margin-left: 10px;
+    padding-top: 15px;
+    width: 320px;
+}
